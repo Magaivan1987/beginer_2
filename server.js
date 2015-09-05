@@ -2,12 +2,14 @@
  * Created by Ivan on 04.09.2015.
  */
 var http = require("http");
+var url = require("url");
 
 function start() {
     function onRequest(req, res) {
-        console.log("request ");
+        var pathname = url.parse(req.url).pathname;
+        console.log("Request for " + pathname + " received.");
         res.writeHead(200, {"Content-Type": "text/plain"});
-        res.write("Hello World");
+        res.write("Hello world");
         res.end();
     }
 
