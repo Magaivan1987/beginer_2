@@ -4,7 +4,7 @@
 var http = require("http");
 
 function start() {
-    function onRequest(request, response) {
+    function onRequest(req, res) {
         console.log("request ");
         res.writeHead(200, {"Content-Type": "text/plain"});
         res.write("Hello World");
@@ -14,5 +14,6 @@ function start() {
     http.createServer(onRequest).listen(8888);
 
     console.log("Server has started.")
-}
-start()
+};
+
+exports.start = start;
