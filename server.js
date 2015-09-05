@@ -1,0 +1,14 @@
+/**
+ * Created by Ivan on 04.09.2015.
+ */
+var http = require("http");
+
+http.createServer(function(req, res) {
+    console.log("request ");
+    res.writeHead(200, {"Content-Type": "text/plain"});
+    res.write("Hello World");
+    res.end();
+}).listen(8888);
+
+console.log("server isload")
+
